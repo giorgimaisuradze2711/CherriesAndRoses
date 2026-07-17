@@ -6,6 +6,7 @@ public abstract class Chaser : MonoBehaviour
 {
     [SerializeField] protected Player player;
     [SerializeField] protected NavMeshAgent agent;
+    [SerializeField] protected Collectible triggerCollectible;
 
     [Header("Chase")]
     [SerializeField] private float catchRadius = 1.5f;
@@ -23,6 +24,10 @@ public abstract class Chaser : MonoBehaviour
     private bool _hasBeenTriggered;
     private bool _isChasingPlayer;
     private bool _isReturning;
+    private bool _isIdleAtOrigin;
+
+    public bool IsChasing => _isChasingPlayer;
+    public event EventHandler OnChaseRequested;
 
     private void Awake()
     {
@@ -37,7 +42,7 @@ public abstract class Chaser : MonoBehaviour
     protected abstract void SubscribeToEvent();
     protected abstract void UnsubscribeFromEvent();
 
-    protected void OnTriggerEvent() => StartChase();
+    protected void OnTriggerEvent() => RequestChase();
 
     private void Update()
     {
@@ -67,15 +72,32 @@ public abstract class Chaser : MonoBehaviour
         }
         else
         {
-            if (_isReturning)
-                StartChase();
+            if (_isReturning || _isIdleAtOrigin)
+                RequestChase();
         }
     }
 
-    private void StartChase()
+    private void RequestChase()
     {
         _hasBeenTriggered = true;
         _isReturning = false;
+        _isIdleAtOrigin = false;
+        agent.isStopped = true;
+        triggerCollectible?.CancelAutoRegrow();
+
+        if (OnChaseRequested != null)
+        {
+            _isChasingPlayer = false;
+            OnChaseRequested.Invoke(this, EventArgs.Empty);
+        }
+        else
+        {
+            ExecuteChase();
+        }
+    }
+
+    public void ExecuteChase()
+    {
         _isChasingPlayer = true;
         agent.isStopped = false;
     }
@@ -106,6 +128,15 @@ public abstract class Chaser : MonoBehaviour
         agent.enabled = true;
 
         if (_hasBeenTriggered)
-            StartChase();
+        {
+            if (NavMesh.SamplePosition(player.transform.position, out _, navMeshSampleDistance, navMeshAreaMask))
+                RequestChase();
+            else
+                _isIdleAtOrigin = true;
+        }
+        else
+        {
+            triggerCollectible?.RegrowNow();
+        }
     }
 }

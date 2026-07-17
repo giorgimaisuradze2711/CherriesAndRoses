@@ -25,6 +25,15 @@ public class Collectible : MonoBehaviour
         Invoke(nameof(Regrow), regrowTime);
     }
 
+    public void CancelAutoRegrow() => CancelInvoke(nameof(Regrow));
+
+    public void RegrowNow()
+    {
+        if (!isPicked) return;
+        CancelInvoke(nameof(Regrow));
+        Regrow();
+    }
+
     private void Regrow()
     {
         isPicked = false;

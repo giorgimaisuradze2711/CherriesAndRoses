@@ -15,7 +15,11 @@ public class Player : MonoBehaviour
     public event EventHandler OnStunned;
     public event EventHandler OnStunRecovered;
     public event EventHandler OnBaloonTaken;
-    public event EventHandler OnBananaTaken;
+    public event EventHandler<OnBananaTakenEventArgs> OnBananaTaken;
+    public class OnBananaTakenEventArgs : EventArgs
+    {
+        public Collectible collectible;
+    }
 
     public event EventHandler<OnStaminaChangedEventArgs> OnStaminaChanged;
     public class OnStaminaChangedEventArgs : EventArgs
@@ -81,9 +85,8 @@ public class Player : MonoBehaviour
     {
         currentStamina = maxStamina;
 
-        CollectibleType[] collectiblesValue = (CollectibleType[])Enum.GetValues(typeof(CollectibleType));
-        int randomIndex = UnityEngine.Random.Range(0, collectiblesValue.Length);
-        CollectibleType team = (CollectibleType)collectiblesValue.GetValue(randomIndex);
+        int teamCount = Enum.GetValues(typeof(CollectibleType)).Length;
+        team = (CollectibleType)UnityEngine.Random.Range(0, teamCount);
 
         Debug.Log($"TEAM: {team}");
 
@@ -108,6 +111,8 @@ public class Player : MonoBehaviour
                 collectibleSO = currentPickable.collectibleSO
             });
 
+            currentPickable.PickUp();
+
             if (currentPickable.collectibleSO.flowerName == FlowerName.BalloonFlower)
             {
                 OnBaloonTaken?.Invoke(this, EventArgs.Empty);
@@ -115,10 +120,8 @@ public class Player : MonoBehaviour
 
             if (currentPickable.collectibleSO.fruitName == FruitName.BananaBread)
             {
-                OnBananaTaken?.Invoke(this, EventArgs.Empty);
+                OnBananaTaken?.Invoke(this, new OnBananaTakenEventArgs { collectible = currentPickable });
             }
-
-            currentPickable.PickUp();
         }
 
         currentPickable = null;

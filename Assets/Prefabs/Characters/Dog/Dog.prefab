@@ -74,6 +74,80 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!1001 &562788729177206046
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2152944029790217346}
+    m_Modifications:
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.019999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.020000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00408
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00066
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00593
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314216834048294699, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: m_Name
+      value: BananaBread
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+--- !u!4 &3099157750770756302 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+  m_PrefabInstance: {fileID: 562788729177206046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8462209161455939704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,11 +202,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7534246568528090362, guid: 7d62521eb01a6944aaca114d7c3a2ff1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3099157750770756302}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d62521eb01a6944aaca114d7c3a2ff1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7409628361873181532}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d62521eb01a6944aaca114d7c3a2ff1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4510425869785197461}
   m_SourcePrefab: {fileID: 100100000, guid: 7d62521eb01a6944aaca114d7c3a2ff1, type: 3}
+--- !u!4 &2152944029790217346 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7534246568528090362, guid: 7d62521eb01a6944aaca114d7c3a2ff1, type: 3}
+  m_PrefabInstance: {fileID: 8462209161455939704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8279154437992109971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7d62521eb01a6944aaca114d7c3a2ff1, type: 3}
   m_PrefabInstance: {fileID: 8462209161455939704}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8768129916872822057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d62521eb01a6944aaca114d7c3a2ff1, type: 3}
+  m_PrefabInstance: {fileID: 8462209161455939704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7409628361873181532
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8768129916872822057}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6751751be85727542a8e99ca0c4651a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4510425869785197461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8768129916872822057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 794fe4c782efede429a4e6a2bb710750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DogAnimator
+  dog: {fileID: 8511353759196791925}
+  animator: {fileID: 7409628361873181532}

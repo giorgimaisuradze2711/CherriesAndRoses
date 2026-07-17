@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class NewMonoBehaviourScript : Chaser
+public class Dog : Chaser
 {
     protected override void SubscribeToEvent()
     {
@@ -13,5 +13,9 @@ public class NewMonoBehaviourScript : Chaser
         player.OnBananaTaken -= OnBananaTaken;
     }
 
-    private void OnBananaTaken(object sender, EventArgs e) => OnTriggerEvent();
+    private void OnBananaTaken(object sender, Player.OnBananaTakenEventArgs e)
+    {
+        triggerCollectible = e.collectible;
+        OnTriggerEvent();
+    }
 }
