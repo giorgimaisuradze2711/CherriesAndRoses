@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public static InventoryManager Instance;
-
     public event EventHandler OnObjectPickUp;
 
-    [SerializeField] private Player player;
+    private Player player;
     [SerializeField] private List<InventoryItem> inventory = new List<InventoryItem>();
 
     private int maxCollectible = 9;
@@ -22,7 +20,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        player = GetComponent<Player>();
     }
 
     void Start()

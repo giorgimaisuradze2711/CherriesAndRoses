@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerDetector : MonoBehaviour
 {
-    public event EventHandler OnPlayerEnter;
-    public event EventHandler OnPlayerExit;
+    public event EventHandler<Player> OnPlayerEnter;
+    public event EventHandler<Player> OnPlayerExit;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,7 +12,7 @@ public class PlayerDetector : MonoBehaviour
         if (player != null)
         {
             Debug.Log($"Player Entered On {name}!");
-            OnPlayerEnter?.Invoke(this, EventArgs.Empty);
+            OnPlayerEnter?.Invoke(this, player);
         }
     }
 
@@ -23,12 +23,12 @@ public class PlayerDetector : MonoBehaviour
         if (player != null)
         {
             Debug.Log($"Player Exited On {name}!");
-            OnPlayerExit?.Invoke(this, EventArgs.Empty);
+            OnPlayerExit?.Invoke(this, player);
         }
     }
 
-    public void InvokePLayerExit()
+    public void InvokePLayerExit(Player player)
     {
-        OnPlayerExit?.Invoke(this, EventArgs.Empty);
+        OnPlayerExit?.Invoke(this, player);
     }
 }

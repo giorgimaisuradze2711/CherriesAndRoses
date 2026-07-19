@@ -2,22 +2,37 @@ using UnityEngine;
 
 public class PickablesInventory : MonoBehaviour
 {
-    [SerializeField] private InventoryManager inventoryManager;
-
     [SerializeField] private Transform pickablesGrid;
     [SerializeField] private Transform pickableContainerTemplate;
 
-    private void Awake()
+    private InventoryManager inventoryManager;
+
+    private void Start()
     {
-        inventoryManager.OnObjectPickUp += InventoryManager_OnObjectPickUp;
+        if (Player.LocalPlayer != null)
+            HookPlayer(Player.LocalPlayer);
+        else
+            Player.OnLocalPlayerSpawned += HookPlayer;
     }
 
-    private void InventoryManager_OnObjectPickUp(object sender, System.EventArgs e)
+    private void OnDestroy()
     {
+        Player.OnLocalPlayerSpawned -= HookPlayer;
+
+        if (inventoryManager != null)
+            inventoryManager.OnObjectPickUp -= InventoryManager_OnObjectPickUp;
+    }
+
+    private void HookPlayer(Player player)
+    {
+        Player.OnLocalPlayerSpawned -= HookPlayer;
+
+        inventoryManager = player.GetComponent<InventoryManager>();
+        inventoryManager.OnObjectPickUp += InventoryManager_OnObjectPickUp;
         UpdateVisual();
     }
 
-    void Start()
+    private void InventoryManager_OnObjectPickUp(object sender, System.EventArgs e)
     {
         UpdateVisual();
     }
@@ -30,7 +45,7 @@ public class PickablesInventory : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (InventoryItem inventoryItem in InventoryManager.Instance.GetInventory())
+        foreach (InventoryItem inventoryItem in inventoryManager.GetInventory())
         {
             Transform recipeTransform = Instantiate(pickableContainerTemplate, pickablesGrid);
             recipeTransform.gameObject.SetActive(true);

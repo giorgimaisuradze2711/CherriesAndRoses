@@ -177,6 +177,9 @@ PrefabInstance:
       addedObject: {fileID: 1765450332011471972}
     - targetCorrespondingSourceObject: {fileID: 5999186763907468791, guid: aa4c611b738713a45bd847415d87763d, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7512112195155950511}
+    - targetCorrespondingSourceObject: {fileID: 5999186763907468791, guid: aa4c611b738713a45bd847415d87763d, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 8748051621454394473}
     - targetCorrespondingSourceObject: {fileID: 6938978007382601096, guid: aa4c611b738713a45bd847415d87763d, type: 3}
       insertIndex: -1
@@ -184,24 +187,36 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6938978007382601096, guid: aa4c611b738713a45bd847415d87763d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6168389891897251534}
+    - targetCorrespondingSourceObject: {fileID: 6938978007382601096, guid: aa4c611b738713a45bd847415d87763d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 658480298768022086}
     - targetCorrespondingSourceObject: {fileID: -7494929799176371243, guid: aa4c611b738713a45bd847415d87763d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 780930147754646913}
     - targetCorrespondingSourceObject: {fileID: -7494929799176371243, guid: aa4c611b738713a45bd847415d87763d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4816449974914865635}
+    - targetCorrespondingSourceObject: {fileID: -7494929799176371243, guid: aa4c611b738713a45bd847415d87763d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7963066791900193993}
     - targetCorrespondingSourceObject: {fileID: 609507845782209285, guid: aa4c611b738713a45bd847415d87763d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5189642708914349349}
     - targetCorrespondingSourceObject: {fileID: 609507845782209285, guid: aa4c611b738713a45bd847415d87763d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5058618190846855775}
+    - targetCorrespondingSourceObject: {fileID: 609507845782209285, guid: aa4c611b738713a45bd847415d87763d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4551501939988709799}
     - targetCorrespondingSourceObject: {fileID: 3466210800682842707, guid: aa4c611b738713a45bd847415d87763d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1212517385414068788}
     - targetCorrespondingSourceObject: {fileID: 3466210800682842707, guid: aa4c611b738713a45bd847415d87763d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9206342614072470876}
+    - targetCorrespondingSourceObject: {fileID: 3466210800682842707, guid: aa4c611b738713a45bd847415d87763d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4215435595487189539}
   m_SourcePrefab: {fileID: 100100000, guid: aa4c611b738713a45bd847415d87763d, type: 3}
 --- !u!1 &695410883559494724 stripped
 GameObject:
@@ -241,7 +256,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcbb5da9705d1c4082ab00ad80051e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
+  ShowTopMostFoldoutHeaderGroup: 1
   collectibleSO: {fileID: 11400000, guid: e610fdefc6184e641b22087d2c4f6030, type: 2}
+  scaleUpDuration: 0.5
+--- !u!114 &4215435595487189539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695410883559494724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 0
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &3332740513626975682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7494929799176371243, guid: aa4c611b738713a45bd847415d87763d, type: 3}
@@ -280,7 +322,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcbb5da9705d1c4082ab00ad80051e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
+  ShowTopMostFoldoutHeaderGroup: 1
   collectibleSO: {fileID: 11400000, guid: e610fdefc6184e641b22087d2c4f6030, type: 2}
+  scaleUpDuration: 0.5
+--- !u!114 &7963066791900193993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3332740513626975682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 0
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &3587544745971952914 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 609507845782209285, guid: aa4c611b738713a45bd847415d87763d, type: 3}
@@ -319,7 +388,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcbb5da9705d1c4082ab00ad80051e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
+  ShowTopMostFoldoutHeaderGroup: 1
   collectibleSO: {fileID: 11400000, guid: e610fdefc6184e641b22087d2c4f6030, type: 2}
+  scaleUpDuration: 0.5
+--- !u!114 &4551501939988709799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587544745971952914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 0
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!4 &4482864646829558268 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aa4c611b738713a45bd847415d87763d, type: 3}
@@ -363,7 +459,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcbb5da9705d1c4082ab00ad80051e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
+  ShowTopMostFoldoutHeaderGroup: 1
   collectibleSO: {fileID: 11400000, guid: e610fdefc6184e641b22087d2c4f6030, type: 2}
+  scaleUpDuration: 0.5
+--- !u!114 &658480298768022086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6480925482741793695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 0
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &7709467997114311648 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5999186763907468791, guid: aa4c611b738713a45bd847415d87763d, type: 3}
@@ -390,6 +513,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &7512112195155950511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7709467997114311648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 0
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &8748051621454394473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,4 +550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcbb5da9705d1c4082ab00ad80051e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
+  ShowTopMostFoldoutHeaderGroup: 1
   collectibleSO: {fileID: 11400000, guid: e610fdefc6184e641b22087d2c4f6030, type: 2}
+  scaleUpDuration: 0.5

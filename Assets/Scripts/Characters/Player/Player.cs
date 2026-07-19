@@ -1,9 +1,13 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using Unity.Cinemachine;
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.Rendering.DebugUI;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     public event EventHandler OnObjectPickUpAnimate;
     public event EventHandler<OnObjectPickUpEventArgs> OnObjectPickUp;
@@ -34,15 +38,29 @@ public class Player : MonoBehaviour
         public string playerTeam;
     }
 
+    // Local player of this client, and cross-player events so AI/UI that used to hold one
+    // hardcoded Player reference can react to whichever player actually triggered them.
+    public static Player LocalPlayer { get; private set; }
+    public static event Action<Player> OnLocalPlayerSpawned;
+    public static event Action<Player> OnAnyBaloonTaken;
+    public static event Action<Player, Collectible> OnAnyBananaTaken;
+
     private const string ROPE_TAG = "Rope";
 
-    [SerializeField] public CollectibleType team;
+    // Assigned by the server (NetworkBootstrap.OnGameplaySceneLoaded) before this object
+    // spawns, so every client - including the owner - gets the authoritative value as part
+    // of the initial spawn state, rather than each client rolling its own independently.
+    public NetworkVariable<CollectibleType> team = new NetworkVariable<CollectibleType>(writePerm: NetworkVariableWritePermission.Server);
 
-    [SerializeField] private InputManager inputManager;
     [SerializeField] private InventoryManager inventoryManager;
 
     [SerializeField] private PlayerAnimator playerAnimator;
     [SerializeField] private CharacterController characterController;
+
+    // Where the camera looks/follows - roughly chest/head height. Falls back to the root
+    // transform (feet level, since that's where CharacterController is centered from) if never
+    // assigned, so this never breaks existing setups that haven't added the child transform yet.
+    [SerializeField] private Transform cameraTarget;
 
     [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float runSpeed = 9f;
@@ -81,51 +99,173 @@ public class Player : MonoBehaviour
     public bool IsStunned() => isStunned;
     public float GetStaminaNormalized() => currentStamina / maxStamina;
 
-    void Start()
+    public override void OnNetworkSpawn()
     {
         currentStamina = maxStamina;
 
-        int teamCount = Enum.GetValues(typeof(CollectibleType)).Length;
-        team = (CollectibleType)UnityEngine.Random.Range(0, teamCount);
+        if (!IsOwner) return;
 
-        Debug.Log($"TEAM: {team}");
+        LocalPlayer = this;
+
+        Debug.Log($"TEAM: {team.Value}");
 
         OnPlayerTeamChoose?.Invoke(this, new OnPlayerTeamChooseEventArgs
         {
-            playerTeam = team.ToString()
+            playerTeam = team.Value.ToString()
         });
 
-        inputManager.EnablePlayerInputs();
-        inputManager.OnInteractPerformed += InputManager_OnInteractPerformed;
+        // Read via the static singleton, not a serialized field: Girl is a prefab spawned at
+        // runtime, and a prefab asset can't hold a valid Inspector reference to a scene-only
+        // object like InputManager (it would always come back null on the spawned instance).
+        InputManager.Instance.EnablePlayerInputs();
+        InputManager.Instance.OnInteractPerformed += InputManager_OnInteractPerformed;
         playerAnimator.OnInteractAnimationFinished += PlayerAnimator_OnInteractAnimationFinished;
+
+        // The scene's single Cinemachine camera and CameraObstructionFade used to have their
+        // Follow/LookAt/target hardcoded in the Inspector to the one placed Girl instance. That
+        // instance no longer exists in multiplayer (players are spawned per connection), so point
+        // them at whichever player is actually local on this client instead. The camera can be
+        // momentarily inactive (loading fade, not yet enabled this frame) right when this player
+        // spawns, so this retries for a short window instead of trying exactly once and silently
+        // giving up. Also re-run on every future scene load, in case this same player object ever
+        // persists across a scene transition without OnNetworkSpawn firing again.
+        WireLocalCamera();
+        NetworkManager.SceneManager.OnLoadEventCompleted += HandleSceneLoadCompleted;
+
+        OnLocalPlayerSpawned?.Invoke(this);
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        if (!IsOwner) return;
+
+        if (LocalPlayer == this) LocalPlayer = null;
+
+        InputManager.Instance.OnInteractPerformed -= InputManager_OnInteractPerformed;
+        playerAnimator.OnInteractAnimationFinished -= PlayerAnimator_OnInteractAnimationFinished;
+        NetworkManager.SceneManager.OnLoadEventCompleted -= HandleSceneLoadCompleted;
+
+        if (wireCameraRoutine != null)
+        {
+            StopCoroutine(wireCameraRoutine);
+            wireCameraRoutine = null;
+        }
+    }
+
+    private void HandleSceneLoadCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
+    {
+        WireLocalCamera();
+    }
+
+    private Coroutine wireCameraRoutine;
+
+    private void WireLocalCamera()
+    {
+        if (wireCameraRoutine != null)
+        {
+            StopCoroutine(wireCameraRoutine);
+        }
+        wireCameraRoutine = StartCoroutine(WireLocalCameraRoutine());
+    }
+
+    // Retries for a short window instead of trying once and silently giving up - the camera can
+    // be momentarily inactive (FindFirstObjectByType only matches active objects by default) or
+    // not yet present at the exact instant this player object spawns.
+    private IEnumerator WireLocalCameraRoutine()
+    {
+        const int maxAttempts = 60; // roughly one second at 60fps
+
+        // Both Follow and LookAt target the root transform directly - camera position stays at
+        // exactly the configured FollowOffset relative to the player, and the camera looks
+        // straight at the player root with no elevation.
+        Transform lookAtTarget = transform;
+
+        for (int attempt = 0; attempt < maxAttempts; attempt++)
+        {
+            CinemachineCamera virtualCamera = FindFirstObjectByType<CinemachineCamera>(FindObjectsInactive.Include);
+            CameraObstructionFade obstructionFade = FindFirstObjectByType<CameraObstructionFade>(FindObjectsInactive.Include);
+
+            // Guard against reassigning a target the camera is already pointed at: Cinemachine
+            // treats any assignment to Follow/LookAt as a target CHANGE and resets its internal
+            // damping/tracking state, causing a momentary recenter/pop even when the value is
+            // unchanged. This matters because HandleSceneLoadCompleted re-invokes this whole
+            // routine on OnLoadEventCompleted, which - on the host - also fires when a SECOND
+            // client finishes its own scene synchronization, even though nothing changed for this
+            // player. Without this guard, every other player connecting would visibly jolt everyone
+            // else's camera for no reason.
+            if (virtualCamera != null && virtualCamera.Follow != transform)
+            {
+                virtualCamera.Follow = transform;
+            }
+
+            if (virtualCamera != null && virtualCamera.LookAt != lookAtTarget)
+            {
+                virtualCamera.LookAt = lookAtTarget;
+            }
+
+            if (obstructionFade != null && obstructionFade.target != lookAtTarget)
+            {
+                obstructionFade.target = lookAtTarget;
+            }
+
+            if (virtualCamera != null && obstructionFade != null)
+            {
+                wireCameraRoutine = null;
+                yield break;
+            }
+
+            yield return null;
+        }
+
+        Debug.LogWarning("[Player] Could not find the CinemachineCamera/CameraObstructionFade to wire to the local player after 1 second.");
+        wireCameraRoutine = null;
     }
 
     private void PlayerAnimator_OnInteractAnimationFinished(object sender, EventArgs e)
     {
-        Debug.Log($"CanPickUp: {inventoryManager.CanPickUp(currentPickable.collectibleSO, team)}"); // add this
+        Debug.Log($"CanPickUp: {inventoryManager.CanPickUp(currentPickable.collectibleSO, team.Value)}"); // add this
 
-        if (inventoryManager.CanPickUp(currentPickable.collectibleSO, team))
+        if (inventoryManager.CanPickUp(currentPickable.collectibleSO, team.Value))
         {
-            OnObjectPickUp?.Invoke(this, new OnObjectPickUpEventArgs
-            {
-                collectibleSO = currentPickable.collectibleSO
-            });
-
-            currentPickable.PickUp();
-
-            if (currentPickable.collectibleSO.flowerName == FlowerName.BalloonFlower)
-            {
-                OnBaloonTaken?.Invoke(this, EventArgs.Empty);
-            }
-
-            if (currentPickable.collectibleSO.fruitName == FruitName.BananaBread)
-            {
-                OnBananaTaken?.Invoke(this, new OnBananaTakenEventArgs { collectible = currentPickable });
-            }
+            Collectible requestedPickable = currentPickable;
+            requestedPickable.OnPickedUpConfirmed += Collectible_OnPickedUpConfirmed;
+            requestedPickable.RequestPickUpServerRpc();
         }
 
         currentPickable = null;
         isPerformingInteraction = false;
+    }
+
+    // Runs only on the requesting client (the confirmation ClientRpc is targeted), so this
+    // handles client-local concerns only: crediting this client's own inventory. Chase
+    // triggering (Player.NotifyPickedUp, below) has to happen server-side instead, since
+    // Chaser's AI only runs on the server and this callback wouldn't reach it when a
+    // non-host client is the one picking the item up.
+    private void Collectible_OnPickedUpConfirmed(Collectible collectible)
+    {
+        collectible.OnPickedUpConfirmed -= Collectible_OnPickedUpConfirmed;
+
+        OnObjectPickUp?.Invoke(this, new OnObjectPickUpEventArgs
+        {
+            collectibleSO = collectible.collectibleSO
+        });
+
+        if (collectible.collectibleSO.flowerName == FlowerName.BalloonFlower)
+            OnBaloonTaken?.Invoke(this, EventArgs.Empty);
+
+        if (collectible.collectibleSO.fruitName == FruitName.BananaBread)
+            OnBananaTaken?.Invoke(this, new OnBananaTakenEventArgs { collectible = collectible });
+    }
+
+    // Called by Collectible.RequestPickUpServerRpc, which always runs on the server -
+    // this is where Chaser (server-authoritative) needs to observe the pickup from.
+    public static void NotifyPickedUp(Player player, Collectible collectible)
+    {
+        if (collectible.collectibleSO.flowerName == FlowerName.BalloonFlower)
+            OnAnyBaloonTaken?.Invoke(player);
+
+        if (collectible.collectibleSO.fruitName == FruitName.BananaBread)
+            OnAnyBananaTaken?.Invoke(player, collectible);
     }
 
     private void InputManager_OnInteractPerformed(object sender, EventArgs e)
@@ -147,6 +287,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!IsOwner) return;
+
         if (!isPerformingInteraction && !isStunned)
         {
             HandleStamina();
@@ -168,7 +310,7 @@ public class Player : MonoBehaviour
 
     private void HandleStamina()
     {
-        bool wantsToRun = inputManager.IsRunHeld() && !isOnRope;
+        bool wantsToRun = InputManager.Instance.IsRunHeld() && !isOnRope;
 
         if (wantsToRun && !isStaminaExhausted && currentStamina > 0f)
         {
@@ -226,7 +368,7 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-        Vector2 inputVector = inputManager.GetInputVectorNormalized();
+        Vector2 inputVector = InputManager.Instance.GetInputVectorNormalized();
         float speed = isRunning ? runSpeed : movementSpeed;
         float moveDistance = speed * Time.deltaTime;
 
@@ -312,7 +454,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ApplyStun(float duration)
+    // Called from Chaser on the server only; relayed to every client (including this
+    // player's own owner) via ClientRpc so the stun actually freezes their movement and
+    // plays consistently everywhere, not just on the server's mirrored copy.
+    public void ApplyStun(float duration) => ApplyStunClientRpc(duration);
+
+    [ClientRpc]
+    private void ApplyStunClientRpc(float duration)
     {
         if (stunCoroutine != null)
             StopCoroutine(stunCoroutine);

@@ -16,14 +16,18 @@ public class InteractionPrompt : MonoBehaviour
         button.SetActive(false);
     }
 
-    private void PlayerDetector_OnPlayerExit(object sender, System.EventArgs e)
+    private void PlayerDetector_OnPlayerExit(object sender, Player player)
     {
+        if (player != Player.LocalPlayer) return;
+
         Debug.Log("PLAYER LEAVE TRIGGER SET!");
         button.SetActive(false);
     }
 
-    private void PlayerDetector_OnPlayerEnter(object sender, System.EventArgs e)
+    private void PlayerDetector_OnPlayerEnter(object sender, Player player)
     {
+        if (player != Player.LocalPlayer) return;
+
         Debug.Log("PLAYER ENTER TRIGGER SET!");
         button.SetActive(true);
     }

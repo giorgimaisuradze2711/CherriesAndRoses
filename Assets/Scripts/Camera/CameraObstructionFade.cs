@@ -21,6 +21,8 @@ public class CameraObstructionFade : MonoBehaviour
     {
         RestoreFadedObjects();
 
+        if (target == null) return;
+
         Vector3 direction = target.position - transform.position;
         float distance = Vector3.Distance(transform.position, target.position);
 

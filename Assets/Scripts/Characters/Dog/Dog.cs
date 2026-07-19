@@ -5,17 +5,17 @@ public class Dog : Chaser
 {
     protected override void SubscribeToEvent()
     {
-        player.OnBananaTaken += OnBananaTaken;
+        Player.OnAnyBananaTaken += OnBananaTaken;
     }
 
     protected override void UnsubscribeFromEvent()
     {
-        player.OnBananaTaken -= OnBananaTaken;
+        Player.OnAnyBananaTaken -= OnBananaTaken;
     }
 
-    private void OnBananaTaken(object sender, Player.OnBananaTakenEventArgs e)
+    private void OnBananaTaken(Player player, Collectible collectible)
     {
-        triggerCollectible = e.collectible;
-        OnTriggerEvent();
+        triggerCollectible = collectible;
+        OnTriggerEvent(player);
     }
 }

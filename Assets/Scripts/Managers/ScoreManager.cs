@@ -1,11 +1,12 @@
 using System;
-using Unity.VisualScripting;
+using Unity.Netcode;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : NetworkBehaviour
 {
     public static ScoreManager Instance { get; private set; }
-    private int currentScore = 0;
+
+    private NetworkVariable<int> currentScore = new NetworkVariable<int>(0);
     private int victoryScore = 10;
 
     public event EventHandler<OnAddScoreEventArgs> OnAddScore;
@@ -21,20 +22,35 @@ public class ScoreManager : MonoBehaviour
         Instance = this;
     }
 
-    public void AddScore(int addedScore)
+    public override void OnNetworkSpawn()
     {
-        currentScore += addedScore;
+        currentScore.OnValueChanged += OnCurrentScoreChanged;
+    }
 
+    public override void OnNetworkDespawn()
+    {
+        currentScore.OnValueChanged -= OnCurrentScoreChanged;
+    }
+
+    private void OnCurrentScoreChanged(int previousValue, int newValue)
+    {
         OnAddScore?.Invoke(this, new OnAddScoreEventArgs
         {
-            score = currentScore
+            score = newValue
         });
 
-        if(currentScore >= victoryScore)
+        if (newValue >= victoryScore)
         {
             OnVictory?.Invoke(this, EventArgs.Empty);
         }
 
-        Debug.Log($"Current Score Is {currentScore}!");
+        Debug.Log($"Current Score Is {newValue}!");
+    }
+
+    public void AddScore(int addedScore)
+    {
+        if (!IsServer) return;
+
+        currentScore.Value += addedScore;
     }
 }

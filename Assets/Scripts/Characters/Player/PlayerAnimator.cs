@@ -48,6 +48,11 @@ public class PlayerAnimator : MonoBehaviour
 
     void Update()
     {
+        // NetworkAnimator replicates whatever the owner sets below to every other client;
+        // a non-owner copy would otherwise drive the same Animator from stale local state
+        // (Player only updates its own movement/interaction state for its owner) and fight it.
+        if (!player.IsOwner) return;
+
         if (isInteracting)
         {
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);

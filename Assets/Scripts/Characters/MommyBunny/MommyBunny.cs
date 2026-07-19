@@ -5,13 +5,13 @@ public class MommyBunny : Chaser
 {
     protected override void SubscribeToEvent()
     {
-        player.OnBaloonTaken += OnBaloonTaken;
+        Player.OnAnyBaloonTaken += OnBaloonTaken;
     }
 
     protected override void UnsubscribeFromEvent()
     {
-        player.OnBaloonTaken -= OnBaloonTaken;
+        Player.OnAnyBaloonTaken -= OnBaloonTaken;
     }
 
-    private void OnBaloonTaken(object sender, EventArgs e) => OnTriggerEvent();
+    private void OnBaloonTaken(Player player) => OnTriggerEvent(player);
 }

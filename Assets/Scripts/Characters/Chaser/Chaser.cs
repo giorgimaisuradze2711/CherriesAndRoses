@@ -1,10 +1,11 @@
 using System;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class Chaser : MonoBehaviour
+public abstract class Chaser : NetworkBehaviour
 {
-    [SerializeField] protected Player player;
+    protected Player targetPlayer;
     [SerializeField] protected NavMeshAgent agent;
     [SerializeField] protected Collectible triggerCollectible;
 
@@ -42,18 +43,26 @@ public abstract class Chaser : MonoBehaviour
     protected abstract void SubscribeToEvent();
     protected abstract void UnsubscribeFromEvent();
 
-    protected void OnTriggerEvent() => RequestChase();
+    protected void OnTriggerEvent(Player player)
+    {
+        if (!IsServer) return;
+
+        targetPlayer = player;
+        RequestChase();
+    }
 
     private void Update()
     {
+        if (!IsServer) return;
+
         if (_hasBeenTriggered)
             CheckPlayerBounds();
 
         if (_isChasingPlayer)
         {
-            agent.SetDestination(player.transform.position);
+            agent.SetDestination(targetPlayer.transform.position);
 
-            if (Vector3.Distance(agent.transform.position, player.transform.position) <= catchRadius)
+            if (Vector3.Distance(agent.transform.position, targetPlayer.transform.position) <= catchRadius)
                 CatchPlayer();
         }
         else if (_isReturning)
@@ -65,7 +74,7 @@ public abstract class Chaser : MonoBehaviour
 
     private void CheckPlayerBounds()
     {
-        if (!NavMesh.SamplePosition(player.transform.position, out _, navMeshSampleDistance, navMeshAreaMask))
+        if (!NavMesh.SamplePosition(targetPlayer.transform.position, out _, navMeshSampleDistance, navMeshAreaMask))
         {
             if (_isChasingPlayer)
                 StartReturning();
@@ -106,7 +115,7 @@ public abstract class Chaser : MonoBehaviour
     {
         _isChasingPlayer = false;
         _hasBeenTriggered = false;
-        player.ApplyStun(4f);
+        targetPlayer.ApplyStun(4f);
         StartReturning();
     }
 
@@ -129,7 +138,7 @@ public abstract class Chaser : MonoBehaviour
 
         if (_hasBeenTriggered)
         {
-            if (NavMesh.SamplePosition(player.transform.position, out _, navMeshSampleDistance, navMeshAreaMask))
+            if (NavMesh.SamplePosition(targetPlayer.transform.position, out _, navMeshSampleDistance, navMeshAreaMask))
                 RequestChase();
             else
                 _isIdleAtOrigin = true;

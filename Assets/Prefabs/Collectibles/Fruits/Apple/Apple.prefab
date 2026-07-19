@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3228244015155873744}
   - component: {fileID: 1437530384078132820}
+  - component: {fileID: -8157095847284274090}
   - component: {fileID: 4091875559976791767}
   m_Layer: 6
   m_Name: Apple
@@ -55,6 +56,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 10, z: 0.2}
   m_Center: {x: 0, y: -5, z: 0}
+--- !u!114 &-8157095847284274090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314216834048294699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 2588906118
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &4091875559976791767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcbb5da9705d1c4082ab00ad80051e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   collectibleSO: {fileID: 11400000, guid: f0e693c419036784fb44ba6139f0db62, type: 2}
+  scaleUpDuration: 0.5
 --- !u!1001 &6395020780778934022
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 197589244
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.91
@@ -192,6 +200,10 @@ PrefabInstance:
     - target: {fileID: 2838029522269228018, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
       propertyPath: m_Name
       value: PomegranateBranch (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716881845609943198, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 887372122
       objectReference: {fileID: 0}
     - target: {fileID: 8582965990796203281, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,6 +267,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1057532386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.91
@@ -315,6 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 70418998}
   - component: {fileID: 70418999}
+  - component: {fileID: 70419000}
   m_Layer: 0
   m_Name: CycleManager
   m_TagString: Untagged
@@ -349,7 +370,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e876579022a7c47acc12e8c5f828f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CycleManager
+  ShowTopMostFoldoutHeaderGroup: 1
   cycleTimeMax: 45
+--- !u!114 &70419000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70418997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 4161158214
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1001 &97779262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361,6 +408,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3980766078
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -525,6 +580,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 114626966
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.91
@@ -627,6 +690,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3810981674
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1237889192
+      objectReference: {fileID: 0}
     - target: {fileID: 9139830218574490628, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
       propertyPath: m_Name
       value: Lotus (3)
@@ -649,6 +720,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 213266954
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -716,6 +795,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3960384416
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
@@ -854,6 +941,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2363358081
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19
@@ -915,6 +1010,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1926398511
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1023,194 +1126,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c54016b9f4454c04fbad621384350c0d, type: 3}
---- !u!1 &330585543
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 330585546}
-  - component: {fileID: 330585545}
-  - component: {fileID: 330585544}
-  - component: {fileID: 330585547}
-  - component: {fileID: 330585548}
-  - component: {fileID: 330585549}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &330585544
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
---- !u!20 &330585545
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &330585546
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 5.6559476e-16, z: -2.34277e-16, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 8.5, z: -8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &330585547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
-  m_Version: 2
---- !u!114 &330585548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowDebugText: 0
-  ShowCameraFrustum: 1
-  IgnoreTimeScale: 0
-  WorldUpOverride: {fileID: 0}
-  ChannelMask: -1
-  UpdateMethod: 2
-  BlendUpdateMethod: 1
-  LensModeOverride:
-    Enabled: 0
-    DefaultMode: 2
-  DefaultBlend:
-    Style: 1
-    Time: 2
-    CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  CustomBlends: {fileID: 0}
---- !u!114 &330585549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93313fd21944579428d3b5ad0a0f002b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraObstructionFade
-  target: {fileID: 1661088668}
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  fadeMaterial: {fileID: 2100000, guid: 562fe22b00a520a4c99ff27f0ac2214e, type: 2}
 --- !u!1001 &347317229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1263,6 +1178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vine (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5091638811552065933, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3489137859
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979583045450991374, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1027950778
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1284,6 +1207,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 227175919
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1403,6 +1334,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 578874199
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
@@ -1603,7 +1542,7 @@ PrefabInstance:
     - target: {fileID: 7668369810661970454, guid: 23c037f86f381a44487db074a6bbd3f6, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1661088670}
+      objectReference: {fileID: 0}
     - target: {fileID: 7668369810661970454, guid: 23c037f86f381a44487db074a6bbd3f6, type: 3}
       propertyPath: catchRadius
       value: 1
@@ -1615,7 +1554,7 @@ PrefabInstance:
     - target: {fileID: 7668369810661970454, guid: 23c037f86f381a44487db074a6bbd3f6, type: 3}
       propertyPath: playerTransform
       value: 
-      objectReference: {fileID: 1661088668}
+      objectReference: {fileID: 0}
     - target: {fileID: 8194517606342435519, guid: 23c037f86f381a44487db074a6bbd3f6, type: 3}
       propertyPath: m_Speed
       value: 5.5
@@ -1663,7 +1602,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7121460722387732683, guid: 23c037f86f381a44487db074a6bbd3f6, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 920713837}
   m_SourcePrefab: {fileID: 100100000, guid: 23c037f86f381a44487db074a6bbd3f6, type: 3}
 --- !u!1001 &416310037
 PrefabInstance:
@@ -1716,6 +1658,14 @@ PrefabInstance:
     - target: {fileID: 645465814685921370, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3683684861
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1237889192
       objectReference: {fileID: 0}
     - target: {fileID: 9139830218574490628, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
       propertyPath: m_Name
@@ -1820,6 +1770,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 733216505
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.91
@@ -1882,6 +1840,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2300580369
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.91
@@ -1942,6 +1908,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5124477488582321123, guid: 5ba29f22de7c594488fa8186e342eec0, type: 3}
   m_PrefabInstance: {fileID: 969996833}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &495764937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 495764939}
+  - component: {fileID: 495764938}
+  m_Layer: 0
+  m_Name: NetworkManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &495764938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495764937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593a2fe42fa9d37498c96f9a383b6521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkManager
+  NetworkManagerExpanded: 0
+  NetworkConfig:
+    ProtocolVersion: 0
+    NetworkTransport: {fileID: 0}
+    PlayerPrefab: {fileID: 0}
+    Prefabs:
+      NetworkPrefabsLists:
+      - {fileID: 11400000, guid: fa65d1d7c3752b048b19c961ce7b4a4c, type: 2}
+    TickRate: 30
+    ClientConnectionBufferTimeout: 10
+    ConnectionApproval: 0
+    ConnectionData: 
+    EnableTimeResync: 0
+    TimeResyncInterval: 30
+    EnsureNetworkVariableLengthSafety: 0
+    EnableSceneManagement: 1
+    ForceSamePrefabs: 1
+    RecycleNetworkIds: 1
+    NetworkIdRecycleDelay: 120
+    RpcHashSize: 0
+    LoadSceneTimeOut: 120
+    SpawnTimeout: 10
+    EnableNetworkLogs: 1
+    NetworkTopology: 0
+    UseCMBService: 0
+    AutoSpawnPlayerPrefabClientSide: 1
+    NetworkProfilingMetrics: 1
+    OldPrefabList: []
+  RunInBackground: 1
+  LogLevel: 1
+--- !u!4 &495764939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495764937}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &507469475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1953,6 +1993,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 442176531
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2119,6 +2167,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vine (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5091638811552065933, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2379103013
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979583045450991374, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2381432303
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2137,6 +2193,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1515499019
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20
@@ -2199,6 +2263,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3829557479
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
@@ -2268,7 +2340,7 @@ PrefabInstance:
     - target: {fileID: 6259378946286291469, guid: 7358f9487ac4746488fc086281a67ba2, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1661088670}
+      objectReference: {fileID: 0}
     - target: {fileID: 6259378946286291469, guid: 7358f9487ac4746488fc086281a67ba2, type: 3}
       propertyPath: canvasGroup
       value: 
@@ -2404,6 +2476,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 739363483
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -2470,6 +2550,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3573606328
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19
@@ -2528,6 +2616,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3216335607
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -2593,6 +2689,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1472813396
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2742,7 +2846,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
     Enabled: 0
     m_Value: 0
@@ -2751,14 +2855,14 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 1661088668}
+    TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 5
-    NearClipPlane: 0.3
-    FarClipPlane: 1000
+    OrthographicSize: 10
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
@@ -2782,8 +2886,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837592292}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 5.516267e-16, z: -2.0055517e-16, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 8.5, z: -8}
+  m_LocalRotation: {x: 0.38268343, y: 0.00000002015611, z: -0.000000008348934, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2875,6 +2979,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vine (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5091638811552065933, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3556362727
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979583045450991374, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3133657650
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2885,6 +2997,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2557612689019580816, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
   m_PrefabInstance: {fileID: 906992211}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &920713834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7121460722387732683, guid: 23c037f86f381a44487db074a6bbd3f6, type: 3}
+  m_PrefabInstance: {fileID: 413034340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &920713837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920713834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 1180446781
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &921288736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,6 +3102,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2359066914
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3063,6 +3213,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 109960645}
     m_Modifications:
+    - target: {fileID: 2739221379216140386, guid: 5ba29f22de7c594488fa8186e342eec0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1211002226
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746196413557134231, guid: 5ba29f22de7c594488fa8186e342eec0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3907471004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5042727907478176707, guid: 5ba29f22de7c594488fa8186e342eec0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 310763782
+      objectReference: {fileID: 0}
     - target: {fileID: 5124477488582321123, guid: 5ba29f22de7c594488fa8186e342eec0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7
@@ -3107,6 +3269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeCherry
       objectReference: {fileID: 0}
+    - target: {fileID: 8828792538908846893, guid: 5ba29f22de7c594488fa8186e342eec0, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2455603923
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3120,6 +3286,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 786483679
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -3226,6 +3400,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3107955574
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1237889192
+      objectReference: {fileID: 0}
     - target: {fileID: 9139830218574490628, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
       propertyPath: m_Name
       value: Lotus (4)
@@ -3251,6 +3433,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4271583441
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3313,6 +3503,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 785601953
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3409,6 +3607,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2329450741
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
@@ -3515,6 +3721,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vine (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5091638811552065933, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2043004071
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979583045450991374, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3604982110
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3533,6 +3747,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1511752335}
     m_Modifications:
+    - target: {fileID: -7099313726114518773, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2619229967
+      objectReference: {fileID: 0}
+    - target: {fileID: -7099313726114518773, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1747969171
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 2310b0faf2efa6245acf3ae35b509f54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.71
@@ -3639,6 +3861,36 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c640daeebf6bf404ab1faf49c512fbec, type: 3}
+--- !u!1 &1182273415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5326099725762908327, guid: e4e5fd5ef551fd345a7f851df6b3bb14, type: 3}
+  m_PrefabInstance: {fileID: 1335473103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1182273423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182273415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 1466849137
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!224 &1196245101 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7286978846447663582, guid: 9079bdf7915d82748a0e280d85f8e446, type: 3}
@@ -3773,6 +4025,36 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9079bdf7915d82748a0e280d85f8e446, type: 3}
+--- !u!1 &1235150315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6670545155283944098, guid: 2a866cf91ce48dc4aa2c8b1a2681d86f, type: 3}
+  m_PrefabInstance: {fileID: 2038120492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1235150319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235150315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 1481617372
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1001 &1251676602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3784,6 +4066,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3799680107
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3847,6 +4137,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3743556296
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19
@@ -3908,6 +4206,10 @@ PrefabInstance:
     - target: {fileID: 2838029522269228018, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
       propertyPath: m_Name
       value: PomegranateBranch (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716881845609943198, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4195380168
       objectReference: {fileID: 0}
     - target: {fileID: 8582965990796203281, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4003,6 +4305,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vine
       objectReference: {fileID: 0}
+    - target: {fileID: 5091638811552065933, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1930902495
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979583045450991374, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2938840927
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4095,7 +4405,7 @@ PrefabInstance:
     - target: {fileID: 6687246510399572022, guid: e4e5fd5ef551fd345a7f851df6b3bb14, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1661088670}
+      objectReference: {fileID: 0}
     - target: {fileID: 6687246510399572022, guid: e4e5fd5ef551fd345a7f851df6b3bb14, type: 3}
       propertyPath: inputManager
       value: 
@@ -4103,7 +4413,7 @@ PrefabInstance:
     - target: {fileID: 6687246510399572022, guid: e4e5fd5ef551fd345a7f851df6b3bb14, type: 3}
       propertyPath: inventoryManager
       value: 
-      objectReference: {fileID: 1581541591}
+      objectReference: {fileID: 0}
     - target: {fileID: 6687246510399572022, guid: e4e5fd5ef551fd345a7f851df6b3bb14, type: 3}
       propertyPath: climbDownPosition.y
       value: 8
@@ -4111,7 +4421,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5326099725762908327, guid: e4e5fd5ef551fd345a7f851df6b3bb14, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 1182273423}
   m_SourcePrefab: {fileID: 100100000, guid: e4e5fd5ef551fd345a7f851df6b3bb14, type: 3}
 --- !u!1001 &1352031634
 PrefabInstance:
@@ -4121,6 +4434,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3527990556
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18
@@ -4187,6 +4508,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1637837287
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.91
@@ -4249,6 +4578,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4134750592
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.91
@@ -4307,6 +4644,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 402379924
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20
@@ -4416,6 +4761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PomegranateBranch (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7716881845609943198, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3831130590
+      objectReference: {fileID: 0}
     - target: {fileID: 8582965990796203281, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.97
@@ -4466,6 +4815,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 756214388
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20
@@ -4572,6 +4929,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vine (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5091638811552065933, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 438563
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979583045450991374, guid: 0c2d0ba22b9b92c4093783e80db95ec7, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3810378786
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4590,6 +4955,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1233439670
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20
@@ -4688,6 +5061,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 968112218
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
@@ -5041,6 +5422,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3651742497
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -5103,6 +5492,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 757729176}
     m_Modifications:
+    - target: {fileID: 1512059311086035101, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1392149659
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677080242418997837, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1205266215
+      objectReference: {fileID: 0}
     - target: {fileID: 2714179680419547519, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35
@@ -5163,6 +5560,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeApple (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5951409473038618995, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 7190562
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965614632856789132, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3443157900
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052151484702020471, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1589702400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5181,6 +5590,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2001144623
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9
@@ -5243,6 +5660,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 757729176}
     m_Modifications:
+    - target: {fileID: 1512059311086035101, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3379849760
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677080242418997837, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1835828504
+      objectReference: {fileID: 0}
     - target: {fileID: 2714179680419547519, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.45000002
@@ -5302,6 +5727,18 @@ PrefabInstance:
     - target: {fileID: 3378091856969454533, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
       propertyPath: m_Name
       value: TreeApple (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951409473038618995, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 123664041
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965614632856789132, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3378829071
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052151484702020471, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 854025323
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5398,52 +5835,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3039d01bb4abda48af681e543690567, type: 3}
---- !u!1 &1581541589
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1581541590}
-  - component: {fileID: 1581541591}
-  m_Layer: 0
-  m_Name: InventoryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1581541590
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1581541589}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2003023345}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1581541591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1581541589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa1711c8bf6662246b3d37919a3143ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1661088670}
-  inventory: []
 --- !u!1001 &1599417503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5452,6 +5843,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2673679883
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20
@@ -5518,6 +5917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PomegranateBranch (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7716881845609943198, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2356277758
+      objectReference: {fileID: 0}
     - target: {fileID: 8582965990796203281, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -5576,108 +5979,194 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8582965990796203281, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
   m_PrefabInstance: {fileID: 1617743676}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1661088667
-PrefabInstance:
+--- !u!1 &1633571657
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2924375153288182386, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: boxSize.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924375153288182386, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: inputManager
-      value: 
-      objectReference: {fileID: 927248797}
-    - target: {fileID: 2924375153288182386, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: movementSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924375153288182386, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: inventoryManager
-      value: 
-      objectReference: {fileID: 1581541591}
-    - target: {fileID: 2924375153288182386, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: detectionDistance
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924375153288182386, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: characterController
-      value: 
-      objectReference: {fileID: 1661088669}
-    - target: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8889318017964261354, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-      propertyPath: m_Name
-      value: Girl
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
---- !u!4 &1661088668 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5219653604973032831, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-  m_PrefabInstance: {fileID: 1661088667}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!143 &1661088669 stripped
-CharacterController:
-  m_CorrespondingSourceObject: {fileID: 6870498738056340785, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-  m_PrefabInstance: {fileID: 1661088667}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1661088670 stripped
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1633571663}
+  - component: {fileID: 1633571662}
+  - component: {fileID: 1633571661}
+  - component: {fileID: 1633571660}
+  - component: {fileID: 1633571659}
+  - component: {fileID: 1633571658}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1633571658
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2924375153288182386, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
-  m_PrefabInstance: {fileID: 1661088667}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1633571657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ae59e6ca22214147a9df3cb727ac3c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 93313fd21944579428d3b5ad0a0f002b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraObstructionFade
+  target: {fileID: 0}
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  fadeMaterial: {fileID: 2100000, guid: 562fe22b00a520a4c99ff27f0ac2214e, type: 2}
+--- !u!114 &1633571659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633571657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowDebugText: 0
+  ShowCameraFrustum: 1
+  IgnoreTimeScale: 0
+  WorldUpOverride: {fileID: 0}
+  ChannelMask: -1
+  UpdateMethod: 2
+  BlendUpdateMethod: 1
+  LensModeOverride:
+    Enabled: 0
+    DefaultMode: 2
+  DefaultBlend:
+    Style: 1
+    Time: 2
+    CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  CustomBlends: {fileID: 0}
+--- !u!114 &1633571660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633571657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
+--- !u!81 &1633571661
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633571657}
+  m_Enabled: 1
+--- !u!20 &1633571662
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633571657}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 10
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1633571663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633571657}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.38268346, y: 0.000000020156111, z: -0.000000008348936, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1679860233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5689,7 +6178,7 @@ PrefabInstance:
     - target: {fileID: 1557509788327074592, guid: ed251486f8750b64697b66f51e9debda, type: 3}
       propertyPath: inventoryManager
       value: 
-      objectReference: {fileID: 1581541591}
+      objectReference: {fileID: 0}
     - target: {fileID: 1597360458396196282, guid: ed251486f8750b64697b66f51e9debda, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5927,6 +6416,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3739966406
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1237889192
+      objectReference: {fileID: 0}
     - target: {fileID: 9139830218574490628, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
       propertyPath: m_Name
       value: Lotus (2)
@@ -6042,6 +6539,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4293608696
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18
@@ -6108,6 +6613,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 221360487
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.91
@@ -6169,6 +6682,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2625196471
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6232,6 +6753,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1702757702
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.91
@@ -6291,6 +6820,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1828029053}
+  - component: {fileID: 1828029055}
   - component: {fileID: 1828029054}
   m_Layer: 0
   m_Name: ScoreManager
@@ -6326,6 +6856,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a470f464be8cf5a48844db3536600a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+--- !u!114 &1828029055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828029052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 1013713249
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1001 &1856421273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6378,6 +6934,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2383595319
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1237889192
+      objectReference: {fileID: 0}
     - target: {fileID: 9139830218574490628, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
       propertyPath: m_Name
       value: Lotus
@@ -6400,6 +6964,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3617568211
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18
@@ -6466,6 +7038,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2796446855
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.91
@@ -6524,6 +7104,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4149632857
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18
@@ -6586,6 +7174,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3170459252
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20
@@ -6648,6 +7244,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3553421391
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18
@@ -6770,7 +7374,6 @@ Transform:
   m_Children:
   - {fileID: 927248796}
   - {fileID: 1828029053}
-  - {fileID: 1581541590}
   - {fileID: 70418998}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6782,6 +7385,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1924522041597281301, guid: 2a866cf91ce48dc4aa2c8b1a2681d86f, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1469259098
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924522041597281301, guid: 2a866cf91ce48dc4aa2c8b1a2681d86f, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 3543894794
+      objectReference: {fileID: 0}
     - target: {fileID: 6304531264460179945, guid: 2a866cf91ce48dc4aa2c8b1a2681d86f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.5107517
@@ -6829,7 +7440,7 @@ PrefabInstance:
     - target: {fileID: 8511353759196791925, guid: 2a866cf91ce48dc4aa2c8b1a2681d86f, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1661088670}
+      objectReference: {fileID: 0}
     - target: {fileID: 8511353759196791925, guid: 2a866cf91ce48dc4aa2c8b1a2681d86f, type: 3}
       propertyPath: navMeshAreaMask
       value: 16
@@ -6837,7 +7448,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6670545155283944098, guid: 2a866cf91ce48dc4aa2c8b1a2681d86f, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1235150319}
   m_SourcePrefab: {fileID: 100100000, guid: 2a866cf91ce48dc4aa2c8b1a2681d86f, type: 3}
 --- !u!224 &2072684178 stripped
 RectTransform:
@@ -6860,6 +7474,14 @@ PrefabInstance:
     - target: {fileID: 975321532810428413, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_Name
       value: StrawberryFlower (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4158246041
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
       objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6923,6 +7545,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1172543521
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19
@@ -6985,6 +7615,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4014572271
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19
@@ -7043,6 +7681,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1447128310}
     m_Modifications:
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2733269436
+      objectReference: {fileID: 0}
+    - target: {fileID: -3037556208666232168, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1323513559
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 70dcf3dc2f9427e41b474bb0c40be908, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -7149,6 +7795,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3492672403
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166418154986666927, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1237889192
+      objectReference: {fileID: 0}
     - target: {fileID: 9139830218574490628, guid: e43f041efe98bc4429432323eeefbfe6, type: 3}
       propertyPath: m_Name
       value: Lotus (1)
@@ -7171,6 +7825,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 437491941}
     m_Modifications:
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3266402886
+      objectReference: {fileID: 0}
+    - target: {fileID: -3604182062797064814, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1928710021
+      objectReference: {fileID: 0}
     - target: {fileID: 3228244015155873744, guid: 335f3eb95d4a3a242b3fb56821d8fbe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18
@@ -7237,6 +7899,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrawberryFlower (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3452359409
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013003575825269053, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1365066467
+      objectReference: {fileID: 0}
     - target: {fileID: 9039596500856222508, guid: 5c00e4c97bc3549408c4eae7450ad893, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19
@@ -7298,6 +7968,10 @@ PrefabInstance:
     - target: {fileID: 2838029522269228018, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
       propertyPath: m_Name
       value: PomegranateBranch (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716881845609943198, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3888428609
       objectReference: {fileID: 0}
     - target: {fileID: 8582965990796203281, guid: 8950d40c8b8406340a44b353ad93bd9e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7372,7 +8046,7 @@ PrefabInstance:
     - target: {fileID: 5782210641424539182, guid: 4bd81e3981dedb74984f06a5358e2002, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1661088670}
+      objectReference: {fileID: 0}
     - target: {fileID: 6496091939891605426, guid: 4bd81e3981dedb74984f06a5358e2002, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.274
@@ -7524,6 +8198,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 757729176}
     m_Modifications:
+    - target: {fileID: 1512059311086035101, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1816394119
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677080242418997837, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4005033278
+      objectReference: {fileID: 0}
     - target: {fileID: 2714179680419547519, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -7584,6 +8266,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreeApple
       objectReference: {fileID: 0}
+    - target: {fileID: 5951409473038618995, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1555735956
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965614632856789132, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3083368561
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052151484702020471, guid: 4b68693e710e1a74bbdc838e8e43d414, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2158424197
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7593,7 +8287,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 330585546}
+  - {fileID: 1633571663}
   - {fileID: 837592296}
   - {fileID: 410087041}
   - {fileID: 832575519}
@@ -7604,7 +8298,6 @@ SceneRoots:
   - {fileID: 1740172983}
   - {fileID: 280645545}
   - {fileID: 1511752335}
-  - {fileID: 1661088667}
   - {fileID: 1335473103}
   - {fileID: 1819468161300218352}
   - {fileID: 1562232422}
@@ -7615,3 +8308,4 @@ SceneRoots:
   - {fileID: 1179390006}
   - {fileID: 297295870}
   - {fileID: 2038120492}
+  - {fileID: 495764939}
