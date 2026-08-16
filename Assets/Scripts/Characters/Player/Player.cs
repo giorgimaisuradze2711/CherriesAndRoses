@@ -93,6 +93,9 @@ public class Player : NetworkBehaviour
     private bool isStunned = false;
     private Coroutine stunCoroutine;
 
+    private float speedMultiplier = 1f;
+    private Coroutine speedBoostCoroutine;
+
     public bool IsOnRope() => isOnRope;
     public bool IsWalking() => isWalking;
     public bool IsRunning() => isRunning;
@@ -379,7 +382,7 @@ public class Player : NetworkBehaviour
     private void HandleMovement()
     {
         Vector2 inputVector = InputManager.Instance.GetInputVectorNormalized();
-        float speed = isRunning ? runSpeed : movementSpeed;
+        float speed = (isRunning ? runSpeed : movementSpeed) * speedMultiplier;
         float moveDistance = speed * Time.deltaTime;
 
         Vector3 moveDir = Vector3.zero;
@@ -492,5 +495,25 @@ public class Player : NetworkBehaviour
         stunCoroutine = null;
 
         OnStunRecovered?.Invoke(this, EventArgs.Empty);
+    }
+
+    // Triggered by a client-local PlayerDetector (e.g. SpeedBoostTrigger), not server-side AI,
+    // so - unlike ApplyStun - this can call straight into the coroutine with no ClientRpc hop.
+    public void ApplySpeedBoost(float multiplier, float duration)
+    {
+        if (speedBoostCoroutine != null)
+            StopCoroutine(speedBoostCoroutine);
+
+        speedBoostCoroutine = StartCoroutine(SpeedBoostRoutine(multiplier, duration));
+    }
+
+    private IEnumerator SpeedBoostRoutine(float multiplier, float duration)
+    {
+        speedMultiplier = multiplier;
+
+        yield return new WaitForSeconds(duration);
+
+        speedMultiplier = 1f;
+        speedBoostCoroutine = null;
     }
 }

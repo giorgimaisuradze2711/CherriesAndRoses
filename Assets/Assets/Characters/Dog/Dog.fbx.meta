@@ -46,11 +46,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Happy
-      takeName: Armature|Happy
+      name: Armature|Sad (1)
+      takeName: Armature|Sad
       internalID: -8544982944672715099
       firstFrame: 0
-      lastFrame: 49
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
