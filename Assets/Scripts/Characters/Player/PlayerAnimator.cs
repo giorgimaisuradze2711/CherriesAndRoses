@@ -8,8 +8,8 @@ public class PlayerAnimator : MonoBehaviour
     private const string IS_ON_ROPE = "IsOnRope";
     private const string IS_VICTORY = "IsVictory";
     private const string ON_INTERACT = "OnInteract";
+    private const string ON_PICK_DOWN = "OnPickDown";
     private const string ON_STUNNED = "OnStunned";
-    private const string PICK_DOWN_ANIMATION_NAME = "Pick Down";
 
     public event EventHandler OnInteractAnimationFinished;
 
@@ -22,6 +22,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         ScoreManager.Instance.OnVictory += ScoreManager_OnVictory;
         player.OnObjectPickUpAnimate += Player_OnObjectPickUpAnimate;
+        player.OnObjectPickDownAnimate += Player_OnObjectPickDownAnimate;
         player.OnStunned += Player_OnStunned;
     }
 
@@ -42,7 +43,14 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Player_OnObjectPickUpAnimate(object sender, EventArgs e)
     {
+        
         animator.SetTrigger(ON_INTERACT);
+        isInteracting = true;
+    }
+
+    private void Player_OnObjectPickDownAnimate(object sender, EventArgs e)
+    {
+        animator.SetTrigger(ON_PICK_DOWN);
         isInteracting = true;
     }
 
@@ -56,13 +64,11 @@ public class PlayerAnimator : MonoBehaviour
         if (isInteracting)
         {
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            if (stateInfo.IsName(PICK_DOWN_ANIMATION_NAME))
+
+            if (stateInfo.normalizedTime >= .90f)
             {
-                if (stateInfo.normalizedTime >= .90f)
-                {
-                    isInteracting = false;
-                    OnInteractAnimationFinished?.Invoke(this, EventArgs.Empty);
-                }
+                isInteracting = false;
+                OnInteractAnimationFinished?.Invoke(this, EventArgs.Empty);
             }
         }
 

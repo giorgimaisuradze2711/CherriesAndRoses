@@ -341,7 +341,7 @@ MonoBehaviour:
     OriginatingState: -1459056457
     DestinationState: -539326284
     TransitionDuration: 0.25
-    TriggerNameHash: -1522830408
+    TriggerNameHash: -1365684436
     TransitionIndex: 1
   - IsCrossFadeExit: 0
     Layer: 0
@@ -352,10 +352,17 @@ MonoBehaviour:
     TransitionIndex: 3
   - IsCrossFadeExit: 0
     Layer: 0
+    OriginatingState: -1459056457
+    DestinationState: 208898825
+    TransitionDuration: 0.25
+    TriggerNameHash: -1522830408
+    TransitionIndex: 4
+  - IsCrossFadeExit: 0
+    Layer: 0
     OriginatingState: 1730824692
     DestinationState: -539326284
     TransitionDuration: 0.25
-    TriggerNameHash: -1522830408
+    TriggerNameHash: -1365684436
     TransitionIndex: 2
   - IsCrossFadeExit: 0
     Layer: 0
@@ -364,6 +371,13 @@ MonoBehaviour:
     TransitionDuration: 0.25
     TriggerNameHash: 1511712010
     TransitionIndex: 4
+  - IsCrossFadeExit: 0
+    Layer: 0
+    OriginatingState: 1730824692
+    DestinationState: 208898825
+    TransitionDuration: 0.25
+    TriggerNameHash: -1522830408
+    TransitionIndex: 5
   - IsCrossFadeExit: 0
     Layer: 0
     OriginatingState: 804699152

@@ -10,6 +10,7 @@ using static UnityEngine.Rendering.DebugUI;
 public class Player : NetworkBehaviour
 {
     public event EventHandler OnObjectPickUpAnimate;
+    public event EventHandler OnObjectPickDownAnimate;
     public event EventHandler<OnObjectPickUpEventArgs> OnObjectPickUp;
     public class OnObjectPickUpEventArgs : EventArgs
     {
@@ -279,7 +280,16 @@ public class Player : NetworkBehaviour
             if (pickable)
             {
                 isPerformingInteraction = true;
-                OnObjectPickUpAnimate?.Invoke(this, EventArgs.Empty);
+
+                if (pickable.collectibleSO.collectibleName == "Apple" || pickable.collectibleSO.collectibleName == "Cherry" || pickable.collectibleSO.collectibleName == "Pomegranate")
+                {
+                    OnObjectPickDownAnimate?.Invoke(this, EventArgs.Empty);
+                }
+                else
+                {
+                    OnObjectPickUpAnimate?.Invoke(this, EventArgs.Empty);
+                }
+
                 currentPickable = pickable;
             }
         }
