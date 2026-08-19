@@ -5,6 +5,7 @@ using Unity.Cinemachine;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 
 public class Player : NetworkBehaviour
@@ -72,6 +73,7 @@ public class Player : NetworkBehaviour
     [SerializeField] private float staminaDrainRate = 1f;
     [SerializeField] private float staminaRegenRate = 0.5f;
     [SerializeField] private float staminaRegenDelay = 1.5f;
+    [SerializeField] private Image speedBoostIndicator;
 
     [SerializeField] private LayerMask pickableLayer;
     [SerializeField] private Vector3 boxSize = new Vector3(1f, 1f, 1f);
@@ -105,6 +107,7 @@ public class Player : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        speedBoostIndicator.enabled = false;
         currentStamina = maxStamina;
 
         if (!IsOwner) return;
@@ -502,9 +505,13 @@ public class Player : NetworkBehaviour
     public void ApplySpeedBoost(float multiplier, float duration)
     {
         if (speedBoostCoroutine != null)
+        {
+            speedBoostIndicator.enabled = false;
             StopCoroutine(speedBoostCoroutine);
+        }
 
         speedBoostCoroutine = StartCoroutine(SpeedBoostRoutine(multiplier, duration));
+        speedBoostIndicator.enabled = true;
     }
 
     private IEnumerator SpeedBoostRoutine(float multiplier, float duration)
@@ -515,5 +522,6 @@ public class Player : NetworkBehaviour
 
         speedMultiplier = 1f;
         speedBoostCoroutine = null;
+        speedBoostIndicator.enabled = false;
     }
 }
