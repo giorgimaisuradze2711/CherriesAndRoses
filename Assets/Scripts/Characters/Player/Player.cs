@@ -279,8 +279,6 @@ public class Player : NetworkBehaviour
     {
         if (!isPerformingInteraction)
         {
-            isOnRope = hasRope;
-
             Collectible pickable = DetectClosestPickableObject();
 
             if (pickable)

@@ -13,17 +13,39 @@ public class ScoreDisplay : MonoBehaviour
 
     void Start()
     {
-        ScoreManager.Instance.OnAddScore += Instance_OnAddScore;
+        if (Holder.LocalHolder != null)
+            HookHolder(Holder.LocalHolder);
+        else
+            Holder.OnLocalHolderSpawned += HookHolder;
+
         ScoreManager.Instance.OnVictory += Instance_OnVictory;
     }
 
-    private void Instance_OnVictory(object sender, System.EventArgs e)
+    private void OnDestroy()
     {
-        victoryTextMesh.gameObject.SetActive(true);
+        Holder.OnLocalHolderSpawned -= HookHolder;
+
+        if (holder != null)
+            holder.OnScoreChanged -= Holder_OnScoreChanged;
     }
 
-    private void Instance_OnAddScore(object sender, ScoreManager.OnAddScoreEventArgs e)
+    private Holder holder;
+
+    private void HookHolder(Holder holder)
+    {
+        Holder.OnLocalHolderSpawned -= HookHolder;
+
+        this.holder = holder;
+        holder.OnScoreChanged += Holder_OnScoreChanged;
+    }
+
+    private void Holder_OnScoreChanged(object sender, Holder.OnScoreChangedEventArgs e)
     {
         scoreTextMesh.text = e.score.ToString();
+    }
+
+    private void Instance_OnVictory(object sender, ScoreManager.OnVictoryEventArgs e)
+    {
+        victoryTextMesh.gameObject.SetActive(true);
     }
 }

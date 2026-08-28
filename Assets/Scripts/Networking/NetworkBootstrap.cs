@@ -24,7 +24,7 @@ public class NetworkBootstrap : MonoBehaviour
 
     [SerializeField] private NetworkManager networkManager;
     [SerializeField] private UnityTransport transport;
-    [SerializeField] private string gameplaySceneName = "SampleScene";
+    [SerializeField] private string gameplaySceneName = "Yard";
     [SerializeField] private GameObject girlPlayerPrefab;
     [SerializeField] private GameObject boyPlayerPrefab;
 
@@ -105,8 +105,9 @@ public class NetworkBootstrap : MonoBehaviour
             Vector3 spawnPosition = new Vector3(nextTeamIndex * PlayerSpawnSpacing, 0f, 0f);
             GameObject playerInstance = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
             playerInstance.GetComponent<Player>().team.Value = (CollectibleType)(nextTeamIndex % teamCount);
-            nextTeamIndex++;
             playerInstance.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
+
+            nextTeamIndex++;
         }
     }
 

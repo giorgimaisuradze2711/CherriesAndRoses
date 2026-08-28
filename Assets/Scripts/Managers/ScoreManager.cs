@@ -2,55 +2,41 @@ using System;
 using Unity.Netcode;
 using UnityEngine;
 
+// Score itself now lives per-player, on each player's own Holder (Holder.score) - this
+// singleton no longer holds any score, it only watches for a player crossing the victory
+// threshold and broadcasts the result to every client.
 public class ScoreManager : NetworkBehaviour
 {
     public static ScoreManager Instance { get; private set; }
 
-    private NetworkVariable<int> currentScore = new NetworkVariable<int>(0);
     private int victoryScore = 10;
 
-    public event EventHandler<OnAddScoreEventArgs> OnAddScore;
-    public class OnAddScoreEventArgs : EventArgs
+    public event EventHandler<OnVictoryEventArgs> OnVictory;
+    public class OnVictoryEventArgs : EventArgs
     {
-        public int score;
+        public ulong winningClientId;
     }
-
-    public event EventHandler OnVictory;
 
     private void Awake()
     {
         Instance = this;
     }
 
-    public override void OnNetworkSpawn()
-    {
-        currentScore.OnValueChanged += OnCurrentScoreChanged;
-    }
-
-    public override void OnNetworkDespawn()
-    {
-        currentScore.OnValueChanged -= OnCurrentScoreChanged;
-    }
-
-    private void OnCurrentScoreChanged(int previousValue, int newValue)
-    {
-        OnAddScore?.Invoke(this, new OnAddScoreEventArgs
-        {
-            score = newValue
-        });
-
-        if (newValue >= victoryScore)
-        {
-            OnVictory?.Invoke(this, EventArgs.Empty);
-        }
-
-        Debug.Log($"Current Score Is {newValue}!");
-    }
-
-    public void AddScore(int addedScore)
+    public void ReportScore(ulong ownerClientId, int newScore)
     {
         if (!IsServer) return;
 
-        currentScore.Value += addedScore;
+        Debug.Log($"Client {ownerClientId} Score Is {newScore}!");
+
+        if (newScore >= victoryScore)
+        {
+            AnnounceVictoryClientRpc(ownerClientId);
+        }
+    }
+
+    [ClientRpc]
+    private void AnnounceVictoryClientRpc(ulong winningClientId)
+    {
+        OnVictory?.Invoke(this, new OnVictoryEventArgs { winningClientId = winningClientId });
     }
 }

@@ -12,7 +12,7 @@ public class LobbyController : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private Button copyJoinCodeButton;
 
-    [SerializeField] private string gameplaySceneName = "SampleScene";
+    [SerializeField] private string gameplaySceneName = "Yard";
 
     private void OnEnable()
     {

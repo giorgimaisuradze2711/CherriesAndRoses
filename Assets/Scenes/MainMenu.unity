@@ -1233,9 +1233,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NetworkBootstrap
   networkManager: {fileID: 473697732}
   transport: {fileID: 473697731}
-  gameplaySceneName: SampleScene
+  gameplaySceneName: Yard
   girlPlayerPrefab: {fileID: 8889318017964261354, guid: 8e60f7c39b85cda409d2312c4907d900, type: 3}
   boyPlayerPrefab: {fileID: 8889318017964261354, guid: b29ddde1d6707254380b47d2331f00ff, type: 3}
+  holderPrefab: {fileID: 5326099725762908327, guid: e4e5fd5ef551fd345a7f851df6b3bb14, type: 3}
+  holderSpawnPoints: []
 --- !u!114 &473697731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2136,7 +2138,7 @@ MonoBehaviour:
   playerCountText: {fileID: 1325602382}
   startButton: {fileID: 678055832}
   copyJoinCodeButton: {fileID: 1642430253}
-  gameplaySceneName: SampleScene
+  gameplaySceneName: Yard
 --- !u!114 &771800035
 MonoBehaviour:
   m_ObjectHideFlags: 0
