@@ -25,6 +25,8 @@ public class NetworkBootstrap : MonoBehaviour
     [SerializeField] private NetworkManager networkManager;
     [SerializeField] private UnityTransport transport;
     [SerializeField] private string gameplaySceneName = "SampleScene";
+    [SerializeField] private GameObject girlPlayerPrefab;
+    [SerializeField] private GameObject boyPlayerPrefab;
 
     public event Action<string> OnConnectionFailed;
     public string LastJoinCode { get; private set; }
@@ -56,8 +58,18 @@ public class NetworkBootstrap : MonoBehaviour
         }
     }
 
+    // Each client's wardrobe pick is sent as connection payload (set on NetworkConfig.ConnectionData
+    // before StartHost()/StartClient()) since it has to reach the server before any player object -
+    // for this client - exists to carry it as a NetworkVariable.
+    private readonly Dictionary<ulong, CharacterChoice> clientCharacterChoices = new();
+
     private void OnConnectionApproval(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
     {
+        CharacterChoice choice = request.Payload != null && request.Payload.Length > 0
+            ? (CharacterChoice)request.Payload[0]
+            : CharacterChoice.Girl;
+        clientCharacterChoices[request.ClientNetworkId] = choice;
+
         response.Approved = true;
         response.CreatePlayerObject = false;
     }
@@ -82,11 +94,14 @@ public class NetworkBootstrap : MonoBehaviour
         if (!networkManager.IsServer) return;
         if (sceneName != gameplaySceneName) return;
 
-        GameObject playerPrefab = networkManager.NetworkConfig.PlayerPrefab;
         int teamCount = Enum.GetValues(typeof(CollectibleType)).Length;
 
         foreach (ulong clientId in clientsCompleted)
         {
+            GameObject playerPrefab = clientCharacterChoices.TryGetValue(clientId, out CharacterChoice choice) && choice == CharacterChoice.Boy
+                ? boyPlayerPrefab
+                : girlPlayerPrefab;
+
             Vector3 spawnPosition = new Vector3(nextTeamIndex * PlayerSpawnSpacing, 0f, 0f);
             GameObject playerInstance = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
             playerInstance.GetComponent<Player>().team.Value = (CollectibleType)(nextTeamIndex % teamCount);
@@ -116,6 +131,7 @@ public class NetworkBootstrap : MonoBehaviour
             Debug.Log($"[NetworkBootstrap] Join code: {joinCode}");
 
             transport.SetRelayServerData(new RelayServerData(allocation, "dtls"));
+            networkManager.NetworkConfig.ConnectionData = new byte[] { (byte)CharacterSelection.Local };
             networkManager.StartHost();
             SubscribeToSceneEvents();
 
@@ -138,6 +154,7 @@ public class NetworkBootstrap : MonoBehaviour
             JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
 
             transport.SetRelayServerData(new RelayServerData(joinAllocation, "dtls"));
+            networkManager.NetworkConfig.ConnectionData = new byte[] { (byte)CharacterSelection.Local };
             networkManager.StartClient();
 
             return true;

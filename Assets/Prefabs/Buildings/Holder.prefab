@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6328201274280907346}
   - component: {fileID: 5626298106838584512}
   - component: {fileID: 1509448846307610443}
+  - component: {fileID: -564859351126220461}
   - component: {fileID: 6687246510399572022}
   m_Layer: 0
   m_Name: Holder
@@ -179,6 +180,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5, y: 1, z: 2}
   m_Center: {x: 0, y: 10.5, z: -2.15}
+--- !u!114 &-564859351126220461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5326099725762908327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 2318876879
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &6687246510399572022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,8 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f732eca9297f446bae716e9f7267d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   inputManager: {fileID: 0}
-  player: {fileID: 0}
+  basket: {fileID: 0}
   climbUpInteractionArea: {fileID: 9141697934946478198}
   climbDownInteractionArea: {fileID: 313627284340184496}
   climbUpPosition: {x: 0, y: 1, z: -1.5}
