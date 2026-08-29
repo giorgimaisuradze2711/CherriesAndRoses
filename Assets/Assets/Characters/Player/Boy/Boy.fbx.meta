@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e53f979bbff3354d99074d6471bb7af
+guid: a6f16c4b5c0a807479544d2636e32d86
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,48 +7,43 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 6109dc4b3642c884cb5fa9f8a962cc62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material.005
-    second: {fileID: 2100000, guid: 775aa2335bf76fa44a0defb32596fadb, type: 2}
+    second: {fileID: 2100000, guid: 0449c914752634844999ff4af5ebe463, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.006
-    second: {fileID: 2100000, guid: 6d825a5e1d764e04c8ae5c5437fe71b6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.007
-    second: {fileID: 2100000, guid: 2898e3c01ab56174fb6283dcf2f561e2, type: 2}
+    second: {fileID: 2100000, guid: 3027831808f67cf469c997d85959312b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.008
-    second: {fileID: 2100000, guid: 46bdea141ede94541a2b45c42f691d36, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.009
-    second: {fileID: 2100000, guid: 0fc9f30a606e6e3449bdd883f48e429b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.010
-    second: {fileID: 2100000, guid: 38333c93ff7a65345ada81f7e2631ecb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.011
-    second: {fileID: 2100000, guid: 720504e41a1e2c046b5228fe97ac0d1a, type: 2}
+    second: {fileID: 2100000, guid: fd7694e7d375c1d4dba5c43cb183439b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.017
-    second: {fileID: 2100000, guid: d2743c50e60201342ad06435e7d2b373, type: 2}
+    second: {fileID: 2100000, guid: 044944e94ca18bd4d974552c3129ebee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SHOES
+    second: {fileID: 2100000, guid: bc284900cf0ff9846a010e1265a0d129, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SHORTS
+    second: {fileID: 2100000, guid: 5dbfc0755945d2f45a73ac9f46d3a5cb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: T-Shirt
-    second: {fileID: 2100000, guid: f30abbe832a23e04db6564d90087af86, type: 2}
+    second: {fileID: 2100000, guid: 4aa8939686d28af4b9faf61b04efe8f1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -145,7 +140,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -254,7 +249,7 @@ ModelImporter:
       takeName: Armature|running
       internalID: 4738648581838305083
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -377,7 +372,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
