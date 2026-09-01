@@ -192,22 +192,33 @@ public class Player : NetworkBehaviour
             CinemachineCamera virtualCamera = FindFirstObjectByType<CinemachineCamera>(FindObjectsInactive.Include);
             CameraObstructionFade obstructionFade = FindFirstObjectByType<CameraObstructionFade>(FindObjectsInactive.Include);
 
-            // Guard against reassigning a target the camera is already pointed at: Cinemachine
-            // treats any assignment to Follow/LookAt as a target CHANGE and resets its internal
-            // damping/tracking state, causing a momentary recenter/pop even when the value is
-            // unchanged. This matters because HandleSceneLoadCompleted re-invokes this whole
-            // routine on OnLoadEventCompleted, which - on the host - also fires when a SECOND
-            // client finishes its own scene synchronization, even though nothing changed for this
-            // player. Without this guard, every other player connecting would visibly jolt everyone
-            // else's camera for no reason.
+            // Guard against reassigning a target the camera is already pointed at - this matters
+            // because HandleSceneLoadCompleted re-invokes this whole routine on
+            // OnLoadEventCompleted, which - on the host - also fires when a SECOND client
+            // finishes its own scene synchronization, even though nothing changed for this
+            // player. Without this guard, every other player connecting would visibly jolt
+            // everyone else's camera for no reason.
+            //
+            // When the target DOES actually change, simply reassigning Follow/LookAt is not
+            // enough to make Cinemachine re-aim at it: CinemachineRotationComposer only snaps
+            // straight to its composition center (skipping damping/dead zone) when
+            // PreviousStateIsValid is false, and that flag is otherwise true on every frame once
+            // this scene's single always-live camera has updated once - long before any player
+            // exists. Left alone, the camera just damps in from whatever stale orientation it had
+            // before a real player was assigned, and with this camera's generous dead
+            // zone/hard-limit, that damping never actually converges on the target. Explicitly
+            // invalidating it here forces the same snap-to-target behavior Cinemachine itself
+            // uses internally for ForceCameraPosition/camera transitions.
             if (virtualCamera != null && virtualCamera.Follow != transform)
             {
                 virtualCamera.Follow = transform;
+                virtualCamera.PreviousStateIsValid = false;
             }
 
             if (virtualCamera != null && virtualCamera.LookAt != lookAtTarget)
             {
                 virtualCamera.LookAt = lookAtTarget;
+                virtualCamera.PreviousStateIsValid = false;
             }
 
             if (obstructionFade != null && obstructionFade.target != lookAtTarget)

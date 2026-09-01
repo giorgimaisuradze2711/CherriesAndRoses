@@ -1,37 +1,35 @@
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 // Spawns one Holder per connected client, each owned by that client and placed at a
 // predefined HolderSpawnPoint - lives in-scene (like ObjectSpawner/ScoreManager) rather than
 // on the persistent NetworkBootstrap, so its holderSpawnPoints list can reference other
 // objects in this same gameplay scene directly instead of needing a cross-scene reference.
+//
+// Exposed as a singleton (mirrors ScoreManager/InputManager) rather than self-subscribing to
+// OnLoadEventCompleted, so NetworkBootstrap can call SpawnHolders directly and synchronously
+// before spawning players - two independent subscribers to the same scene-load event would
+// fire in an unguaranteed order, which matters now that player spawn position depends on
+// each client's holder already existing.
 public class HolderSpawner : NetworkBehaviour
 {
+    public static HolderSpawner Instance { get; private set; }
+
     [SerializeField] private GameObject holderPrefab;
     [SerializeField] private List<HolderSpawnPoint> holderSpawnPoints;
 
-    public override void OnNetworkSpawn()
+    private void Awake()
     {
-        if (!IsServer) return;
-
-        NetworkManager.SceneManager.OnLoadEventCompleted += HandleSceneLoadCompleted;
+        Instance = this;
     }
 
-    public override void OnNetworkDespawn()
+    public Dictionary<ulong, Vector3> SpawnHolders(List<ulong> clientsCompleted)
     {
-        if (NetworkManager != null && NetworkManager.SceneManager != null)
-        {
-            NetworkManager.SceneManager.OnLoadEventCompleted -= HandleSceneLoadCompleted;
-        }
-    }
+        var tipPositionsByClientId = new Dictionary<ulong, Vector3>();
 
-    private void HandleSceneLoadCompleted(string sceneName, LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
-    {
-        NetworkManager.SceneManager.OnLoadEventCompleted -= HandleSceneLoadCompleted;
-
-        if (holderPrefab == null || holderSpawnPoints == null || holderSpawnPoints.Count == 0) return;
+        if (!IsServer) return tipPositionsByClientId;
+        if (holderPrefab == null || holderSpawnPoints == null || holderSpawnPoints.Count == 0) return tipPositionsByClientId;
 
         if (holderSpawnPoints.Count < clientsCompleted.Count)
         {
@@ -44,8 +42,13 @@ public class HolderSpawner : NetworkBehaviour
             HolderSpawnPoint spawnPoint = holderSpawnPoints[i % holderSpawnPoints.Count];
 
             GameObject holderInstance = Instantiate(holderPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation);
-            holderInstance.GetComponent<Holder>().SetClothColorIndex(i);
+            Holder holder = holderInstance.GetComponent<Holder>();
+            holder.SetClothColorIndex(i);
             holderInstance.GetComponent<NetworkObject>().SpawnWithOwnership(clientId, true);
+
+            tipPositionsByClientId[clientId] = holder.GetPlayerSpawnWorldPosition();
         }
+
+        return tipPositionsByClientId;
     }
 }

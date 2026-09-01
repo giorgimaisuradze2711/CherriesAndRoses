@@ -26,10 +26,10 @@ public class Holder : NetworkBehaviour
     // whichever the server happened to set locally. Mirrors Player.team's set-before-Spawn use.
     private NetworkVariable<int> clothColorIndex = new NetworkVariable<int>(0, writePerm: NetworkVariableWritePermission.Server);
 
-    [SerializeField] private Basket basket;
     [SerializeField] private MeshRenderer basketClothRenderer;
     [SerializeField] private Texture2D[] clothTextures;
     [SerializeField] private GameObject wrongHolderIndicator;
+    [SerializeField] private Transform playerSpawnPoint;
 
     [SerializeField] private PlayerDetector climbUpInteractionArea;
     [SerializeField] private PlayerDetector climbDownInteractionArea;
@@ -79,6 +79,8 @@ public class Holder : NetworkBehaviour
     }
 
     public void SetClothColorIndex(int index) => clothColorIndex.Value = index;
+
+    public Vector3 GetPlayerSpawnWorldPosition() => playerSpawnPoint.position;
 
     private void ApplyClothColor()
     {

@@ -17,11 +17,6 @@ public class NetworkBootstrap : MonoBehaviour
 {
     private const int MaxConnections = 4;
 
-    // Every player was spawning at the exact same point (Instantiate with no position), so their
-    // CharacterControllers overlapped the instant a second player spawned, shoving both of them
-    // apart and visibly jolting their cameras. Spread each new spawn out along X instead.
-    private const float PlayerSpawnSpacing = 2f;
-
     [SerializeField] private NetworkManager networkManager;
     [SerializeField] private UnityTransport transport;
     [SerializeField] private string gameplaySceneName = "Yard";
@@ -96,13 +91,22 @@ public class NetworkBootstrap : MonoBehaviour
 
         int teamCount = Enum.GetValues(typeof(CollectibleType)).Length;
 
+        Dictionary<ulong, Vector3> tipPositionsByClientId = HolderSpawner.Instance != null
+            ? HolderSpawner.Instance.SpawnHolders(clientsCompleted)
+            : new Dictionary<ulong, Vector3>();
+
+        if (HolderSpawner.Instance == null)
+        {
+            Debug.LogWarning("[NetworkBootstrap] No HolderSpawner found in the loaded scene - players will spawn at the world origin.");
+        }
+
         foreach (ulong clientId in clientsCompleted)
         {
             GameObject playerPrefab = clientCharacterChoices.TryGetValue(clientId, out CharacterChoice choice) && choice == CharacterChoice.Boy
                 ? boyPlayerPrefab
                 : girlPlayerPrefab;
 
-            Vector3 spawnPosition = new Vector3(nextTeamIndex * PlayerSpawnSpacing, 0f, 0f);
+            Vector3 spawnPosition = tipPositionsByClientId.TryGetValue(clientId, out Vector3 tipPosition) ? tipPosition : Vector3.zero;
             GameObject playerInstance = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
             playerInstance.GetComponent<Player>().team.Value = (CollectibleType)(nextTeamIndex % teamCount);
             playerInstance.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
